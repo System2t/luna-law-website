@@ -799,9 +799,15 @@ a{color:inherit;text-decoration:none}
   [style*="grid-template-columns:repeat(3,1fr)"].reveal:has(.team-card){
     grid-template-columns:1fr 1fr !important;
   }
+  [style*="grid-template-columns:repeat(4,1fr)"].reveal:has(.team-card){
+    grid-template-columns:1fr 1fr !important;
+  }
 }
 @media(max-width:540px){
   [style*="grid-template-columns:repeat(3,1fr)"].reveal:has(.team-card){
+    grid-template-columns:1fr !important;
+  }
+  [style*="grid-template-columns:repeat(4,1fr)"].reveal:has(.team-card){
     grid-template-columns:1fr !important;
   }
 }
