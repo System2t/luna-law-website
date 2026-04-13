@@ -811,3 +811,14 @@ a{color:inherit;text-decoration:none}
     grid-template-columns:1fr !important;
   }
 }
+
+/* ── Mobile responsiveness audit additions ── */
+html{max-width:100vw;overflow-x:hidden}
+@media(max-width:860px){
+  .nav-drawer a{min-height:44px;display:flex;align-items:center;padding:8px 0}
+  .nav-drawer .drawer-phone,.nav-drawer .drawer-cta{min-height:52px}
+}
+@media(max-width:600px){
+  .hero-actions{flex-direction:column;align-items:stretch;width:100%}
+  .hero-actions .btn-gold,.hero-actions .btn-ghost-lt{width:100%;min-width:0}
+}
