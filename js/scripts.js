@@ -42,7 +42,10 @@ if (faqAcc) {
     if (!open) {
       item.classList.add('open');
       q.setAttribute('aria-expanded', 'true');
-      if (ans) ans.hidden = false;
+      if (ans) {
+        ans.hidden = false;
+        ans.setAttribute('aria-live', 'polite');
+      }
     }
   });
 }
