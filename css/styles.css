@@ -899,7 +899,7 @@ html{max-width:100vw;overflow-x:hidden}
   }
   .hero-photo-bg img{
     object-fit:cover!important;
-    object-position:center 15%!important;
+    object-position:70% center!important;
     opacity:0.45!important;
   }
   .hero-photo-overlay{
@@ -930,5 +930,5 @@ html{max-width:100vw;overflow-x:hidden}
   .hero-actions{margin-bottom:48px!important}
 }
 @media(max-width:600px){
-  .hero-photo-bg img{object-position:60% 10%!important}
+  .hero-photo-bg img{object-position:70% center!important}
 }
