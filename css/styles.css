@@ -3,7 +3,6 @@
 .hero{
   position:relative;
   width:100%;
-  height:clamp(620px, 82vh, 820px);
   overflow:hidden;
   background:#07080c;
   display:block;
@@ -147,7 +146,7 @@ a{color:inherit;text-decoration:none}
 .drawer-cta{font-family:'Outfit',sans-serif!important;font-style:normal!important;margin-top:8px;padding:14px 60px;background:var(--gold);color:var(--void)!important;font-size:.85rem!important;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 
 /* HERO */
-.hero{position:relative;height:100svh;min-height:600px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:var(--void)}
+.hero{position:relative;height:clamp(560px,72vh,720px);min-height:560px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:var(--void)}
 
 
 
