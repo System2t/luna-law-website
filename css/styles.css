@@ -3,7 +3,7 @@
 .hero{
   position:relative;
   width:100%;
-  height:100vh;
+  height:clamp(620px, 82vh, 820px);
   overflow:hidden;
   background:#07080c;
   display:block;
@@ -49,7 +49,7 @@
 .hero-photo-bg img{
   width:100%;height:100%;
   object-fit:cover;
-  object-position:top center;
+  object-position:right center;
   display:block;
 }
 /* Left-to-right gradient over the photo so text is readable */
@@ -899,7 +899,7 @@ html{max-width:100vw;overflow-x:hidden}
   }
   .hero-photo-bg img{
     object-fit:cover!important;
-    object-position:70% center!important;
+    object-position:85% center!important;
     opacity:0.45!important;
   }
   .hero-photo-overlay{
@@ -930,5 +930,5 @@ html{max-width:100vw;overflow-x:hidden}
   .hero-actions{margin-bottom:48px!important}
 }
 @media(max-width:600px){
-  .hero-photo-bg img{object-position:70% center!important}
+  .hero-photo-bg img{object-position:88% center!important}
 }
