@@ -277,7 +277,7 @@ a{color:inherit;text-decoration:none}
 .attorney-sig-bg{position:absolute;bottom:-20px;right:-60px;width:clamp(340px,50vw,780px);opacity:.045;mix-blend-mode:screen;pointer-events:none;user-select:none}
 .attorney-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,7vw,100px);align-items:center;max-width:1300px;margin:0 auto;position:relative;z-index:2}
 .attorney-photo-wrap{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:var(--void)}
-.attorney-photo-wrap img.main-photo{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.attorney-photo-wrap img.main-photo{width:100%;height:100%;object-fit:cover;object-position:70% center;display:block}
 .attorney-photo-wrap .gold-top-bar{position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);z-index:2}
 .attorney-sig-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(7,8,12,.88) 0%,transparent 100%);display:flex;justify-content:flex-start;z-index:2}
 .attorney-sig-overlay img{width:clamp(140px,20vw,220px);height:auto;mix-blend-mode:screen;opacity:.7}
