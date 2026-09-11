@@ -84,7 +84,7 @@
 .hero-title-accent{display:block;font-weight:400;font-style:italic;color:#d4ac62;font-size:.75em;letter-spacing:.01em}
 .hero-tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.2vw,1.55rem);font-style:italic;font-weight:400;color:rgba(255,255,255,.5);margin:clamp(20px,3vw,36px) 0 clamp(40px,5vw,60px);animation:fUp .7s ease .38s both;max-width:560px;line-height:1.55}
 .hero-tagline strong{color:#d4ac62;font-weight:400}
-.hero-actions{display:flex;flex-wrap:wrap;gap:16px;animation:fUp .7s ease .5s both}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:clamp(40px,6vh,72px);animation:fUp .7s ease .5s both}
 .hero-bar{display:none}
 .hero-stat{display:none}
 .hero-stat-val{display:none}
