@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-09-11 — YouTube live-stream ticker banner
+**Decision:** Site-wide fixed news-ticker banner below the nav promoting the weekly Thursday 12 PM ET YouTube live stream (Uno Next Latino channel), with live countdown, LIVE NOW state during the noon hour, brand-gold styling (not literal yellow), GA event watch_live_click.
+**Reason:** The attorney appears weekly on a local channel's YouTube live stream; a persistent but subtle broadcast-style ticker converts site visitors into stream viewers. Gold over taxi-yellow keeps the firm's premium look; countdown targets America/New_York so EST/EDT are always correct.
+
 ### 2026-09-11 — PageSpeed optimization pass (LCP, fonts, lazy-loading, ARIA)
 **Decision:** Preload + fetchpriority on the index hero with an 860px mobile variant; Google Fonts made non-blocking with preconnect to fonts.gstatic.com; all below-fold images lazy-loaded with explicit dimensions; practice-areas tablist <li> elements marked role="presentation".
 **Reason:** PageSpeed Insights (2026-09-11) scored mobile performance 63 with LCP 13.5s driven by the unprioritized oversized hero, ~1,350ms of render-blocking font CSS, and accessibility 80–83 from a malformed tablist ARIA tree. These are structural fixes with no visual change. Deliberately NOT addressed: third-party unused JS (GA + Super Lawyers, protected integrations) and the muted-text contrast flag (brand color change requiring owner/leadership approval).

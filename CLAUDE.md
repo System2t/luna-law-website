@@ -31,7 +31,8 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 ├── css/styles.css      ALL shared CSS (nav, footer, sections, colors, typography).
 ├── js/scripts.js       ALL shared JS: mobile nav drawer, FAQ accordion (faq.html),
 │                       practice-area tabs (NOTE: the tab panel copy lives in the
-│                       `pdata` array in this file, not in HTML), scroll reveal.
+│                       `pdata` array in this file, not in HTML), scroll reveal,
+│                       live ticker countdown (all pages).
 └── assets/
     ├── logo.png                 White "LunaLaw, pllc." logo (nav + footer, all pages)
     ├── hernan-hero.jpg          Hernan hero cutout, index hero desktop (compressed JPEG 85%)
@@ -80,7 +81,7 @@ Note: John J. Borgo is not currently shown on about.html (his headshot exists at
 | Calendly | Booking: https://calendly.com/hernanlunalaw — this replaced the old contact form |
 | LawPay | Payments: https://secure.lawpay.com/pages/luna/operating |
 | Google Analytics 4 | ID `G-KQM1N2SDG9`, gtag snippet in `<head>` of ALL pages |
-| GA custom events | `book_consultation_click` (Calendly links), `make_payment_click` (LawPay links), `phone_call_click` (tel: links) — inline `onclick="gtag('event', ...)"` handlers |
+| GA custom events | `book_consultation_click` (Calendly links), `make_payment_click` (LawPay links), `phone_call_click` (tel: links), `watch_live_click` (YouTube live banner) — inline `onclick="gtag('event', ...)"` handlers |
 | Google Search Console | Property for hlunalaw.com; monitors indexing/404-deindexing of old spam URLs |
 | Super Lawyers | Paid badge embed in index.html (external CSS+JS from superlawyers.com + profile link) — keep intact |
 | KidSide | Community partner section on about.html; links to https://kidsidemiami.org/ |
@@ -115,6 +116,9 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 - Schedule a Consultation → Calendly (new tab, GA event)
 - Make Payment → LawPay (new tab, gold text, GA event)
 - Book Consultation (CTA button) → Calendly (new tab, GA event)
+
+## Live Ticker Banner
+A fixed gold "breaking news" ticker sits directly below the nav on all 6 pages (index, about, faq, privacy-terms, thank-you, 404), scrolling right-to-left continuously. It links to https://www.youtube.com/@UnoNextLatino (new tab, GA event `watch_live_click`) and shows a live countdown to the next Thursday 12:00 PM America/New_York (EST/EDT handled automatically). During Thursday 12:00–12:59 PM ET it switches to a red LIVE NOW state. Styles live in the `LIVE TICKER BANNER` block at the end of `css/styles.css`; countdown/live-state logic lives in the `Live ticker countdown` block at the end of `js/scripts.js`. **Editing rule:** any new page must include the ticker markup (right after `</header>`, before `<main>`) — the site-wide `body{padding-top:102px}` (98px at ≤600px) reserves space for the fixed nav (68px) + ticker (34px / 30px mobile) and depends on every page having it.
 
 ## Rules for AI Edits
 - NEVER push without approval. After committing, STOP, print the End-of-Task Report, and wait. Only run `git push origin main` after the owner replies with approval (e.g. "push", "deploy", "go live"). Pushing deploys the live site.

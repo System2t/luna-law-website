@@ -95,3 +95,41 @@ const obs = new IntersectionObserver(es => {
   });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Live ticker countdown (all pages)
+const ticker = document.getElementById('live-ticker');
+if (ticker) {
+  const tA = document.getElementById('ticker-a');
+  const tB = document.getElementById('ticker-b');
+  const nyParts = () => {
+    const p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false }).formatToParts(new Date());
+    const g = t => p.find(x => x.type === t).value;
+    return { day: g('weekday'), h: +g('hour') % 24, m: +g('minute'), s: +g('second') };
+  };
+  const update = () => {
+    const n = nyParts();
+    const days = ['Thu','Fri','Sat','Sun','Mon','Tue','Wed'];
+    const isLive = n.day === 'Thu' && n.h === 12;
+    let text;
+    if (isLive) {
+      ticker.classList.add('is-live');
+      text = 'LUNA LAW IS LIVE NOW ON UNO NEXT LATINO — WATCH THE STREAM • ';
+    } else {
+      ticker.classList.remove('is-live');
+      let dIdx = days.indexOf(n.day);
+      let secsToday = n.h * 3600 + n.m * 60 + n.s;
+      let target = 12 * 3600;
+      let dayOffset = dIdx === 0 ? (secsToday < target ? 0 : 7) : (7 - dIdx) % 7;
+      if (dIdx === 0 && n.h === 12) dayOffset = 0; // covered by isLive
+      let secs = dayOffset * 86400 + target - secsToday;
+      if (secs < 0) secs += 7 * 86400;
+      const d = Math.floor(secs / 86400), h = Math.floor(secs % 86400 / 3600), m = Math.floor(secs % 3600 / 60), s = secs % 60;
+      const cd = (d > 0 ? d + 'D ' : '') + String(h).padStart(2,'0') + 'H ' + String(m).padStart(2,'0') + 'M ' + String(s).padStart(2,'0') + 'S';
+      text = 'LUNA LAW GOES LIVE EVERY THURSDAY AT 12 PM ET ON UNO NEXT LATINO — NEXT STREAM IN ' + cd + ' • ';
+    }
+    if (tA.textContent !== text) { tA.textContent = text; tB.textContent = text; }
+    else { tA.textContent = text; tB.textContent = text; }
+  };
+  update();
+  setInterval(update, 1000);
+}
