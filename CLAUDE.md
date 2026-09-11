@@ -34,17 +34,15 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 │                       `pdata` array in this file, not in HTML), scroll reveal.
 └── assets/
     ├── logo.png                 White "LunaLaw, pllc." logo (nav + footer, all pages)
-    ├── hernan-hero.png          Hernan hero cutout, index hero (large; candidate for compression)
+    ├── hernan-hero.jpg          Hernan hero cutout, index hero (compressed JPEG 85%)
     ├── hernan-portrait.jpeg     Hernan portrait, index attorney-bio section
     ├── hero.jpg                 Hero background photo
-    ├── portrait.jpg             Legacy portrait (verify before deleting)
     ├── sig.png                  Hernan Luna signature watermark (used on all pages)
     ├── badge-family.png         Florida Bar Family Law Section badge
     ├── badge-criminal.png       Florida Bar Criminal Law Section badge
     ├── kidside-logo-02.svg      KidSide logo (about.html partnership section)
     ├── team.jpg                 Team photo used in og:/twitter: social meta tags
-    ├── team-updated.png         Older team photo (unused; superseded by v2)
-    ├── team-updated-v2.png      Current team photo shown on about.html
+    ├── team-updated-v2.jpg      Current team photo shown on about.html (compressed JPEG 85%)
     └── team/                    Individual headshots (.jpg): hernan-luna, john-borgo,
                                  diego-montano, raul-uribe, rony-vasquez
 ```
