@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-09-11 — Owner-approved deploys with end-of-task reports
+**Decision:** Executor sessions commit locally, then stop and print a report (what changed, why, what to test once live) and wait. The executor pushes only after the owner approves in chat; the push triggers the Netlify deploy.
+**Reason:** Pushing to `main` deploys to the live site in ~30 seconds with no other gate. Holding for approval gives the owner a review checkpoint before anything reaches clients, without requiring the owner to run git commands.
+
 ### 2026-09-11 — Documentation as system of record
 **Decision:** CLAUDE.md rewritten as the single authoritative project document; this decision log created.
 **Reason:** The site has no CMS and is maintained solely via AI planner/executor sessions with a human site manager copying plans between them. Stale docs directly cause wrong edits, so every change plan must end with a docs update.

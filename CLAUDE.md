@@ -116,6 +116,8 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 - Book Consultation (CTA button) → Calendly (new tab, GA event)
 
 ## Rules for AI Edits
+- NEVER push without approval. After committing, STOP, print the End-of-Task Report, and wait. Only run `git push origin main` after the owner replies with approval (e.g. "push", "deploy", "go live"). Pushing deploys the live site.
+- End every task with the End-of-Task Report (see section below).
 - NEVER use emojis anywhere on the site.
 - NEVER use heavy/impact/blocky fonts — headings are Libre Baskerville only.
 - NEVER add placeholder content — all copy must be real and approved.
@@ -127,6 +129,15 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 - Always test mobile responsiveness — breakpoints at 860px and 600px.
 - Every change plan ends with updating this file (and ARCHITECTURE.md for decisions).
 
+## End-of-Task Report (required)
+Every executor task ends with a local commit (no push), then this report, then WAITING for the owner's go-ahead:
+
+1. **What was changed** — plain-language list of every change, file by file.
+2. **Why it was changed** — the reason for each change, in terms the firm owner understands.
+3. **What to test after it's live** — specific pages/elements on https://hlunalaw.com to check once deployed (which URLs to open, what should look/behave correctly, on desktop and mobile).
+
+Then say: "Reply 'push' to deploy." When the owner approves, run `git push origin main` and confirm the deploy (~30 seconds to go live).
+
 ## Future CMS Direction
 Leadership eventually wants a lite CMS: non-technical firm leadership logging in to edit designated content and file change tickets to the site manager. Approach is **under evaluation** (see ARCHITECTURE.md open decisions). Until then, keep this content/structure split clean so the editable content stays extractable:
 
@@ -137,4 +148,4 @@ Leadership eventually wants a lite CMS: non-technical firm leadership logging in
 When making changes, avoid entangling the editable content above with structural markup more than it already is.
 
 ## Deployment
-Push to `main` → Netlify auto-deploys (~30s) → verify on https://hlunalaw.com. DNS already points to Netlify; the old staging URL still works but is not shared publicly.
+AI sessions commit to `main` locally, print the End-of-Task Report, and hold. On the owner's approval they run `git push origin main` → Netlify auto-deploys (~30s) → owner verifies on https://hlunalaw.com using the report's test checklist. DNS already points to Netlify; the old staging URL still works but is not shared publicly.
