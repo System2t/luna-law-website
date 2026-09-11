@@ -74,15 +74,19 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet"></noscript>
 
 <link rel="stylesheet" href="css/styles.css">
+<link rel="preload" as="image" href="assets/hernan-hero.jpg" imagesrcset="assets/hernan-hero-mobile.jpg 860w, assets/hernan-hero.jpg 1619w" media="(min-width: 861px)">
+<link rel="preload" as="image" href="assets/hernan-hero-mobile.jpg" media="(max-width: 860px)">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <header role="banner">
   <nav class="nav" aria-label="Main navigation">
-    <a href="#" class="nav-logo" aria-label="Luna Law Home"><img src="assets/logo.png" alt="Luna Law, PLLC" height="34"></a>
+    <a href="#" class="nav-logo" aria-label="Luna Law Home"><img src="assets/logo.png" alt="Luna Law, PLLC" width="220" height="55"></a>
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="#services">Services</a></li>
@@ -117,13 +121,13 @@
 
   <div class="hero-photo-bg" aria-hidden="true">
     <picture>
-      <source media="(max-width: 860px)" srcset="assets/hernan-hero.jpg">
-      <img src="assets/hernan-hero.jpg" alt="Hernan Luna, Founding Attorney at Luna Law PLLC — South Florida divorce and family law" style="width:100%;height:100%;object-fit:cover;object-position:right center;display:block;">
+      <source media="(max-width: 860px)" srcset="assets/hernan-hero-mobile.jpg">
+      <img src="assets/hernan-hero.jpg" alt="Hernan Luna, Founding Attorney at Luna Law PLLC — South Florida divorce and family law" fetchpriority="high" decoding="async" width="1619" height="972" style="width:100%;height:100%;object-fit:cover;object-position:right center;display:block;">
     </picture>
   </div>
   <div class="hero-photo-overlay" aria-hidden="true"></div>
 
-  <img class="hero-sig" src="assets/sig.png" alt="" role="presentation">
+  <img class="hero-sig" src="assets/sig.png" alt="" role="presentation" width="300" height="78" loading="lazy" decoding="async">
 
   <div class="hero-inner">
     <div class="hero-pre" aria-hidden="true">
@@ -160,8 +164,8 @@
     </div>
     <div class="creds-divider" aria-hidden="true"></div>
     <div class="creds-badges reveal">
-      <div class="badge-item"><img src="assets/badge-family.png" alt="The Florida Bar — Family Law Section" width="120" height="120"><span class="badge-caption">Family Law Section</span></div>
-      <div class="badge-item"><img src="assets/badge-criminal.png" alt="The Florida Bar — Criminal Law Section" width="120" height="120"><span class="badge-caption">Criminal Law Section</span></div>
+      <div class="badge-item"><img src="assets/badge-family.png" alt="The Florida Bar — Family Law Section" width="120" height="120" loading="lazy" decoding="async"><span class="badge-caption">Family Law Section</span></div>
+      <div class="badge-item"><img src="assets/badge-criminal.png" alt="The Florida Bar — Criminal Law Section" width="120" height="120" loading="lazy" decoding="async"><span class="badge-caption">Criminal Law Section</span></div>
     </div>
   </div>
   </div>
@@ -179,7 +183,7 @@
     <line x1="620" y1="350" x2="1180" y2="350" stroke="#b89144" stroke-width="0.5"/>
     <line x1="900" y1="70" x2="900" y2="630" stroke="#b89144" stroke-width="0.5"/>
   </svg>
-  <img class="why-sig" src="assets/sig.png" alt="" role="presentation">
+  <img class="why-sig" src="assets/sig.png" alt="" role="presentation" width="300" height="78" loading="lazy" decoding="async">
   <div class="why-grid">
     <div class="reveal">
       <div class="s-label"><span class="s-label-bar" aria-hidden="true"></span><span class="s-label-text">Why Luna Law</span></div>
@@ -252,15 +256,15 @@
   <h2 class="s-title reveal" id="prac-h">Every Matter<br>We <em>Handle</em></h2>
   <div class="practice-layout">
     <ul class="prac-list" role="tablist" aria-label="Practice areas" id="prac-list">
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="true" aria-controls="prac-panel" data-i="0">Divorce &amp; Legal Separation <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="1">Child Custody &amp; Parenting Plans <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="2">Child &amp; Spousal Support <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="3">High-Net-Worth Divorce <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="4">Domestic Violence Injunctions <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="5">Adoptions &amp; Guardianship <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="6">Paternity &amp; Father's Rights <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="7">Post-Divorce Modifications <span class="prac-arrow" aria-hidden="true">→</span></button></li>
-      <li class="prac-item"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="8">Alimony &amp; Spousal Support <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="true" aria-controls="prac-panel" data-i="0">Divorce &amp; Legal Separation <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="1">Child Custody &amp; Parenting Plans <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="2">Child &amp; Spousal Support <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="3">High-Net-Worth Divorce <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="4">Domestic Violence Injunctions <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="5">Adoptions &amp; Guardianship <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="6">Paternity &amp; Father's Rights <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="7">Post-Divorce Modifications <span class="prac-arrow" aria-hidden="true">→</span></button></li>
+      <li class="prac-item" role="presentation"><button class="prac-btn" role="tab" aria-selected="false" aria-controls="prac-panel" data-i="8">Alimony &amp; Spousal Support <span class="prac-arrow" aria-hidden="true">→</span></button></li>
     </ul>
     <div class="prac-panel reveal" role="tabpanel" id="prac-panel" tabindex="0">
       <div class="prac-panel-tag" id="pp-tag">Divorce Law</div>
@@ -368,12 +372,12 @@
     <circle cx="600" cy="300" r="190" stroke="#b89144" stroke-width="0.6"/>
     <circle cx="600" cy="300" r="130" stroke="#b89144" stroke-width="0.6"/>
   </svg>
-  <img class="attorney-sig-bg" src="assets/sig.png" alt="" role="presentation">
+  <img class="attorney-sig-bg" src="assets/sig.png" alt="" role="presentation" width="300" height="78" loading="lazy" decoding="async">
   <div class="attorney-grid">
     <div class="reveal">
-      <div class="attorney-photo-wrap" aria-label="Hernan Luna, Founding Attorney at Luna Law PLLC">
+      <div class="attorney-photo-wrap">
         <div class="gold-top-bar" aria-hidden="true"></div>
-        <img class="main-photo" src="assets/hernan-portrait.jpeg" alt="Hernan Luna — Family Law and Criminal Defense Attorney, South Florida">
+        <img class="main-photo" src="assets/hernan-portrait.jpeg" alt="Hernan Luna — Family Law and Criminal Defense Attorney, South Florida" width="1024" height="768" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="reveal" itemscope itemtype="https://schema.org/Person">
@@ -403,7 +407,7 @@
   <div class="tx tx-dots" aria-hidden="true"></div>
   <div class="corner-glow-bl" aria-hidden="true"></div>
   <div class="section-wrap">
-  <img class="testi-sig" src="assets/sig.png" alt="" role="presentation">
+  <img class="testi-sig" src="assets/sig.png" alt="" role="presentation" width="300" height="78" loading="lazy" decoding="async">
   <div class="s-label reveal"><span class="s-label-bar" aria-hidden="true"></span><span class="s-label-text">Client Stories</span></div>
   <h2 class="s-title reveal" id="testi-h">Real Families.<br><em>Real Results.</em></h2>
   <div class="testi-grid" role="list">
@@ -445,7 +449,7 @@
   <div class="corner-glow" aria-hidden="true"></div>
   <div class="corner-glow-bl" aria-hidden="true"></div>
   <div class="section-wrap">
-    <img class="cta-sig" src="assets/sig.png" alt="" role="presentation">
+    <img class="cta-sig" src="assets/sig.png" alt="" role="presentation" width="300" height="78" loading="lazy" decoding="async">
   <div class="cta-inner">
     <div>
       <h2 class="cta-hl" id="cta-h">When it matters most,<br><em>the right attorney<br>changes everything.</em></h2>
@@ -569,10 +573,10 @@
 <!-- FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="tx tx-lines" aria-hidden="true"></div>
-  <img class="footer-sig" src="assets/sig.png" alt="" role="presentation">
+  <img class="footer-sig" src="assets/sig.png" alt="" role="presentation" width="300" height="78" loading="lazy" decoding="async">
   <div class="section-wrap" style="padding:0 clamp(28px,7vw,90px);">
   <div class="footer-grid">
-    <div><div class="footer-logo"><img src="assets/logo.png" alt="Luna Law, PLLC" height="30"></div><p class="footer-tagline">"Helping people smile again.<br>One divorce at a time."</p><p class="footer-desc">South Florida's dedicated divorce, family law, and criminal defense firm. Serving Miami-Dade, Broward, and Palm Beach counties for over 20 years.</p></div>
+    <div><div class="footer-logo"><img src="assets/logo.png" alt="Luna Law, PLLC" width="220" height="55" loading="lazy" decoding="async"></div><p class="footer-tagline">"Helping people smile again.<br>One divorce at a time."</p><p class="footer-desc">South Florida's dedicated divorce, family law, and criminal defense firm. Serving Miami-Dade, Broward, and Palm Beach counties for over 20 years.</p></div>
     <nav aria-label="Practice areas"><div class="footer-head">Practice Areas</div><ul class="footer-links-plain"><li>Contested Divorce</li><li>Uncontested Divorce</li><li>Child Custody</li><li>Child Support</li><li>Alimony</li><li>Criminal Defense</li></ul></nav>
     <nav aria-label="Firm links"><div class="footer-head">The Firm</div><ul class="footer-links"><li><a href="about.html">About Luna Law</a></li><li><a href="index.html#attorney">Hernan Luna</a></li><li><a href="faq.html">FAQ</a></li><li><a href="https://secure.lawpay.com/pages/luna/operating" onclick="gtag('event', 'make_payment_click', {'event_category': 'engagement', 'event_label': 'LawPay Payment'});" target="_blank" rel="noopener noreferrer" style="color:var(--gold-lt)">Make Payment</a></li></ul></nav>
     <div class="footer-contact"><div class="footer-head">Contact</div><p><a href="tel:+18008685862" onclick="gtag('event', 'phone_call_click', {'event_category': 'engagement', 'event_label': 'Phone Call'});">1-800-868-5862</a></p><p>8950 SW 74th Ct, Suite 2201 PMB A56<br>Miami, FL 33156</p><p style="margin-top:12px;font-size:.7rem;color:rgba(255,255,255,.16)">Mon – Sun: 9am – 5pm</p></div>

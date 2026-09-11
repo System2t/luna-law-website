@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-09-11 — PageSpeed optimization pass (LCP, fonts, lazy-loading, ARIA)
+**Decision:** Preload + fetchpriority on the index hero with an 860px mobile variant; Google Fonts made non-blocking with preconnect to fonts.gstatic.com; all below-fold images lazy-loaded with explicit dimensions; practice-areas tablist <li> elements marked role="presentation".
+**Reason:** PageSpeed Insights (2026-09-11) scored mobile performance 63 with LCP 13.5s driven by the unprioritized oversized hero, ~1,350ms of render-blocking font CSS, and accessibility 80–83 from a malformed tablist ARIA tree. These are structural fixes with no visual change. Deliberately NOT addressed: third-party unused JS (GA + Super Lawyers, protected integrations) and the muted-text contrast flag (brand color change requiring owner/leadership approval).
+
 ### 2026-09-11 — Owner-approved deploys with end-of-task reports
 **Decision:** Executor sessions commit locally, then stop and print a report (what changed, why, what to test once live) and wait. The executor pushes only after the owner approves in chat; the push triggers the Netlify deploy.
 **Reason:** Pushing to `main` deploys to the live site in ~30 seconds with no other gate. Holding for approval gives the owner a review checkpoint before anything reaches clients, without requiring the owner to run git commands.

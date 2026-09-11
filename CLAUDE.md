@@ -34,7 +34,8 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 │                       `pdata` array in this file, not in HTML), scroll reveal.
 └── assets/
     ├── logo.png                 White "LunaLaw, pllc." logo (nav + footer, all pages)
-    ├── hernan-hero.jpg          Hernan hero cutout, index hero (compressed JPEG 85%)
+    ├── hernan-hero.jpg          Hernan hero cutout, index hero desktop (compressed JPEG 85%)
+    ├── hernan-hero-mobile.jpg   Hernan hero cutout, index hero mobile variant (~860w, JPEG 85%)
     ├── hernan-portrait.jpeg     Hernan portrait, index attorney-bio section
     ├── hero.jpg                 Hero background photo
     ├── sig.png                  Hernan Luna signature watermark (used on all pages)
@@ -128,6 +129,7 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 - Never add a catch-all redirect to `_redirects`.
 - Always test mobile responsiveness — breakpoints at 860px and 600px.
 - Every change plan ends with updating this file (and ARCHITECTURE.md for decisions).
+- All images below the fold get loading="lazy" decoding="async" and explicit width/height attributes; the index hero image keeps fetchpriority="high" and its preload links. Google Fonts loads via the non-blocking media="print" onload pattern — preserve it when editing <head>.
 
 ## End-of-Task Report (required)
 Every executor task ends with a local commit (no push), then this report, then WAITING for the owner's go-ahead:
