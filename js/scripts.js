@@ -113,7 +113,7 @@ if (ticker) {
     let text;
     if (isLive) {
       ticker.classList.add('is-live');
-      text = 'LUNA LAW IS LIVE NOW ON UNO NEXT LATINO — WATCH THE STREAM • ';
+      text = 'LUNA LAW IS LIVE NOW — WATCH THE STREAM • ';
     } else {
       ticker.classList.remove('is-live');
       let dIdx = days.indexOf(n.day);
@@ -123,9 +123,9 @@ if (ticker) {
       if (dIdx === 0 && n.h === 12) dayOffset = 0; // covered by isLive
       let secs = dayOffset * 86400 + target - secsToday;
       if (secs < 0) secs += 7 * 86400;
-      const d = Math.floor(secs / 86400), h = Math.floor(secs % 86400 / 3600), m = Math.floor(secs % 3600 / 60), s = secs % 60;
-      const cd = (d > 0 ? d + 'D ' : '') + String(h).padStart(2,'0') + 'H ' + String(m).padStart(2,'0') + 'M ' + String(s).padStart(2,'0') + 'S';
-      text = 'LUNA LAW GOES LIVE EVERY THURSDAY AT 12 PM ET ON UNO NEXT LATINO — NEXT STREAM IN ' + cd + ' • ';
+      const d = Math.floor(secs / 86400), h = Math.floor(secs % 86400 / 3600), m = Math.floor(secs % 3600 / 60);
+      const cd = (d > 0 ? d + 'D ' : '') + String(h).padStart(2,'0') + 'H ' + String(m).padStart(2,'0') + 'M';
+      text = 'LUNA LAW GOES LIVE EVERY THURSDAY AT 12 PM ET — NEXT STREAM IN ' + cd + ' • ';
     }
     if (tA.textContent !== text) { tA.textContent = text; tB.textContent = text; }
     else { tA.textContent = text; tB.textContent = text; }
