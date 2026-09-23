@@ -983,3 +983,22 @@ html{max-width:100vw;overflow-x:hidden}
 /* ===== INSTAGRAM FEED (ELFSIGHT) ===== */
 .insta-feed{background:var(--surface);border:1px solid var(--rim);border-top:2px solid var(--gold);padding:16px;min-height:420px}
 @media (max-width:860px){.insta-feed{min-height:360px}}
+
+/* ===== CONTACT MESSAGE FORM (NETLIFY) ===== */
+.msg-form-wrap{position:relative;z-index:2;margin-top:clamp(48px,7vw,80px);background:var(--surface);border:1px solid var(--rim);border-top:2px solid var(--gold);padding:clamp(28px,4vw,48px)}
+.msg-form-head{margin-bottom:28px}
+.msg-form-intro{font-size:.9rem;line-height:1.85;color:var(--muted);max-width:560px}
+.msg-form-hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.msg-form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.msg-field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.msg-field label,.msg-consent label{font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.msg-field input,.msg-field textarea{width:100%;background:var(--void);border:1px solid var(--rim);color:var(--white);font-family:'Outfit',sans-serif;font-size:.95rem;padding:14px 16px;border-radius:0;transition:border-color .2s}
+.msg-field input:focus,.msg-field textarea:focus{outline:none;border-color:var(--gold)}
+.msg-field textarea{resize:vertical;min-height:140px}
+.msg-consent{display:flex;align-items:flex-start;gap:12px;margin-bottom:28px}
+.msg-consent input{width:18px;height:18px;margin-top:2px;flex-shrink:0;accent-color:var(--gold)}
+.msg-consent label{font-size:.78rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);line-height:1.6}
+.msg-consent label a{color:var(--gold);text-decoration:underline}
+.msg-form-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.msg-form-note{font-size:.72rem;color:rgba(255,255,255,.3)}
+@media (max-width:600px){.msg-form-row{grid-template-columns:1fr}.msg-form-actions .btn-gold{width:100%}}

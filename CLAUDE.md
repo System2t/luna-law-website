@@ -17,7 +17,7 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 ├── index.html          Homepage: hero, credentials, services, process, practice-area
 │                       tabs, attorney bio + Super Lawyers badge, criminal defense,
 │                       testimonials, CTA, Instagram live feed (Elfsight), Yelp,
-│                       contact info, footer.
+│                       contact info, contact form (Netlify), footer.
 │                       Contains LocalBusiness/Attorney JSON-LD.
 ├── about.html          About page: firm intro, team photo, team grid, why choose us,
 │                       philosophy, credential badges, KidSide partnership, CTA, footer.
@@ -79,14 +79,15 @@ Note: John J. Borgo is not currently shown on about.html (his headshot exists at
 |---|---|
 | Netlify | Hosts site; GitHub `main` auto-deploy; serves `_redirects` and `404.html` |
 | AWS Route 53 | DNS incl. Microsoft 365 email records — see DNS & Email section (NEVER touch) |
-| Calendly | Booking: https://calendly.com/hernanlunalaw — this replaced the old contact form |
+| Calendly | Booking: https://calendly.com/hernanlunalaw — primary booking path; contact form re-added 2026-09 as a third option |
 | LawPay | Payments: https://secure.lawpay.com/pages/luna/operating |
 | Google Analytics 4 | ID `G-KQM1N2SDG9`, gtag snippet in `<head>` of ALL pages |
-| GA custom events | `book_consultation_click` (Calendly links), `make_payment_click` (LawPay links), `phone_call_click` (tel: links), `watch_live_click` (YouTube live banner) — inline `onclick="gtag('event', ...)"` handlers |
+| GA custom events | `book_consultation_click` (Calendly links), `make_payment_click` (LawPay links), `phone_call_click` (tel: links), `watch_live_click` (YouTube live banner), `contact_form_submit` (form submit) — inline `onclick="gtag('event', ...)"` handlers |
 | Google Search Console | Property for hlunalaw.com; monitors indexing/404-deindexing of old spam URLs |
 | Super Lawyers | Paid badge embed in index.html (external CSS+JS from superlawyers.com + profile link) — keep intact |
 | KidSide | Community partner section on about.html; links to https://kidsidemiami.org/ |
 | Elfsight | Instagram Feed widget on index.html, app ID d1e60766-d52d-42a1-954a-1126a149d175 (firm-owned account; trial until leadership adds payment — trial shows an Elfsight badge). Script is injected on scroll by scripts.js, NOT placed in HTML. |
+| Netlify Forms | Homepage form name="contact" (fields: name, phone, email, message, sms-consent; honeypot bot-field; action /thank-you.html). Detection must be enabled in Netlify → Site configuration → Forms; notification emails configured there (owner-side). Free tier: 100 submissions/month. |
 
 **GA event rule:** every Calendly, LawPay, and tel: link on every page carries its inline `onclick` gtag handler. When editing, moving, or adding any such link, the matching handler MUST be preserved/added.
 
@@ -121,6 +122,9 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 
 ## Live Ticker Banner
 A fixed gold "breaking news" ticker sits directly below the nav on all 6 pages (index, about, faq, privacy-terms, thank-you, 404), scrolling right-to-left continuously. It links to https://www.youtube.com/@UnoNextLatino (new tab, GA event `watch_live_click`) and shows a live countdown to the next Thursday 12:00 PM America/New_York (EST/EDT handled automatically). During Thursday 12:00–12:59 PM ET it switches to a red LIVE NOW state. Styles live in the `LIVE TICKER BANNER` block at the end of `css/styles.css`; countdown/live-state logic lives in the `Live ticker countdown` block at the end of `js/scripts.js`. **Editing rule:** any new page must include the ticker markup (right after `</header>`, before `<main>`) — the site-wide `body{padding-top:102px}` (98px at ≤600px) reserves space for the fixed nav (68px) + ticker (34px / 30px mobile) and depends on every page having it.
+
+## Contact Form
+Netlify handles submissions with no backend. Keep `data-netlify="true"`, `netlify-honeypot="bot-field"`, the hidden `form-name` input, and `name="contact"` — removing any breaks capture. The SMS consent checkbox exists because privacy-terms.html carries the SMS Privacy Statement; keep them in sync. Spam: honeypot + Netlify's built-in filtering; if spam rises, add `data-netlify-recaptcha="true"` + `<div data-netlify-recaptcha="true"></div>`.
 
 ## Rules for AI Edits
 - NEVER push without approval. After committing, STOP, print the End-of-Task Report, and wait. Only run `git push origin main` after the owner replies with approval (e.g. "push", "deploy", "go live"). Pushing deploys the live site.

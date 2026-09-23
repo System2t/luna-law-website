@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-09-23 — Contact form re-added via Netlify Forms
+**Decision:** Re-add a homepage contact form (Netlify Forms, honeypot, thank-you redirect, SMS consent checkbox, GA event contact_form_submit) as a third option alongside phone and Calendly.
+**Reason:** Firm owner explicitly requested a no-call option (confirmed as an owner decision, not an AI suggestion). Netlify Forms is free, hosted by the existing host, needs no backend or third-party service, and keeps the zero-attack-surface posture. Phone and Calendly remain the primary conversion paths.
+
 ### 2026-09-23 — Live Instagram feed via Elfsight (paid widget over DIY)
 **Decision:** Replace the hand-built static Instagram preview card with an Elfsight Instagram Feed widget (~$5/mo Basic tier, firm-owned account). Script loads on scroll, not at page load.
 **Reason:** Meta shut down the free Instagram feed API (Dec 2024); every reliable option is a paid widget. Elfsight is the cheapest reliable tier, was leadership's own suggestion, handles Meta token maintenance, and avoids building a credentialed serverless integration on a site rebuilt for zero attack surface. Auto-screenshot/scraping approaches were rejected as fragile and against Instagram's ToS. Scroll-triggered loading preserves the 2026-09-11 PageSpeed gains.

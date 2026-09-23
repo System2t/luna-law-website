@@ -552,7 +552,7 @@
 
     <!-- Right: consultation options -->
     <div class="reveal">
-      <h3 style="font-family:'Libre Baskerville',serif;font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:700;color:var(--white);margin-bottom:32px;">Two Ways to Get Started</h3>
+      <h3 style="font-family:'Libre Baskerville',serif;font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:700;color:var(--white);margin-bottom:32px;">Three Ways to Get Started</h3>
 
       <div style="margin-bottom:32px;">
         <div style="font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">By Phone</div>
@@ -568,11 +568,39 @@
         <a href="https://calendly.com/hernanlunalaw" onclick="gtag('event', 'book_consultation_click', {'event_category': 'engagement', 'event_label': 'Calendly Booking'});" target="_blank" rel="noopener noreferrer" class="btn-gold" style="display:inline-flex;align-items:center;justify-content:center;width:100%;">Schedule a Consultation</a>
       </div>
 
+      <div style="width:100%;height:1px;background:var(--rim);margin:32px 0;"></div>
+      <div>
+        <div style="font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">By Message</div>
+        <p style="font-size:.9rem;line-height:1.85;color:var(--muted);margin-bottom:20px;">Prefer not to call? Send us a message below and a member of our team will respond within 24 hours.</p>
+        <a href="#message-form" class="btn-ghost-lt">Send a Message</a>
+      </div>
+
       <p style="font-size:.72rem;color:rgba(255,255,255,.22);text-align:center;line-height:1.6;margin-top:20px;">All consultations are strictly confidential.</p>
     </div>
   </div>
 
-  
+  <div class="msg-form-wrap reveal" id="message-form">
+    <div class="msg-form-head">
+      <div class="s-label"><span class="s-label-bar" aria-hidden="true"></span><span class="s-label-text">Send a Message</span></div>
+      <p class="msg-form-intro">Tell us briefly about your situation. All messages are confidential and reviewed by our legal team.</p>
+    </div>
+    <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="msg-form" onsubmit="gtag('event', 'contact_form_submit', {'event_category': 'engagement', 'event_label': 'Contact Form'});">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="msg-form-hp" aria-hidden="true"><label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="msg-form-row">
+        <div class="msg-field"><label for="cf-name">Full Name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="msg-field"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="msg-field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="msg-field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message" rows="5" required></textarea></div>
+      <div class="msg-consent"><input id="cf-sms" name="sms-consent" type="checkbox" value="yes"><label for="cf-sms">I agree to receive SMS text messages from Luna Law, PLLC regarding my inquiry. Message and data rates may apply. Reply STOP to opt out. See our <a href="privacy-terms.html">SMS Privacy Statement</a>.</label></div>
+      <div class="msg-form-actions">
+        <button type="submit" class="btn-gold">Send Message</button>
+        <span class="msg-form-note">Confidential. We respond within 24 hours.</span>
+      </div>
+    </form>
+  </div>
+
 </section>
 
 <!-- FOOTER -->
