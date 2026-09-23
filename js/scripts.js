@@ -133,3 +133,24 @@ if (ticker) {
   update();
   setInterval(update, 1000);
 }
+
+// Instagram feed (Elfsight) — script injected on scroll to protect page speed
+const instaFeed = document.getElementById('insta-feed');
+if (instaFeed) {
+  const loadElfsight = () => {
+    if (document.getElementById('elfsight-platform')) return;
+    const s = document.createElement('script');
+    s.id = 'elfsight-platform';
+    s.src = 'https://elfsightcdn.com/platform.js';
+    s.async = true;
+    document.body.appendChild(s);
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => {
+      if (es.some(e => e.isIntersecting)) { loadElfsight(); io.disconnect(); }
+    }, { rootMargin: '600px 0px' });
+    io.observe(instaFeed);
+  } else {
+    loadElfsight();
+  }
+}

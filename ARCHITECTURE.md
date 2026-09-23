@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-09-23 — Live Instagram feed via Elfsight (paid widget over DIY)
+**Decision:** Replace the hand-built static Instagram preview card with an Elfsight Instagram Feed widget (~$5/mo Basic tier, firm-owned account). Script loads on scroll, not at page load.
+**Reason:** Meta shut down the free Instagram feed API (Dec 2024); every reliable option is a paid widget. Elfsight is the cheapest reliable tier, was leadership's own suggestion, handles Meta token maintenance, and avoids building a credentialed serverless integration on a site rebuilt for zero attack surface. Auto-screenshot/scraping approaches were rejected as fragile and against Instagram's ToS. Scroll-triggered loading preserves the 2026-09-11 PageSpeed gains.
+
 ### 2026-09-11 — YouTube live-stream ticker banner
 **Decision:** Site-wide fixed news-ticker banner below the nav promoting the weekly Thursday 12 PM ET YouTube live stream (Uno Next Latino channel), with live countdown, LIVE NOW state during the noon hour, brand-gold styling (not literal yellow), GA event watch_live_click.
 **Reason:** The attorney appears weekly on a local channel's YouTube live stream; a persistent but subtle broadcast-style ticker converts site visitors into stream viewers. Gold over taxi-yellow keeps the firm's premium look; countdown targets America/New_York so EST/EDT are always correct.

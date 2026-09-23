@@ -979,3 +979,7 @@ html{max-width:100vw;overflow-x:hidden}
 @keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.live-ticker-track{animation:none;width:100%;justify-content:center}.live-ticker-content:last-child{display:none}.live-ticker-content{padding-right:0}}
 @media (max-width:600px){.live-ticker{height:30px}.live-ticker-content{font-size:.62rem;letter-spacing:.12em}}
+
+/* ===== INSTAGRAM FEED (ELFSIGHT) ===== */
+.insta-feed{background:var(--surface);border:1px solid var(--rim);border-top:2px solid var(--gold);padding:16px;min-height:420px}
+@media (max-width:860px){.insta-feed{min-height:360px}}
