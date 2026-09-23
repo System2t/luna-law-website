@@ -1001,4 +1001,5 @@ html{max-width:100vw;overflow-x:hidden}
 .msg-consent label a{color:var(--gold);text-decoration:underline}
 .msg-form-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .msg-form-note{font-size:.72rem;color:rgba(255,255,255,.3)}
-@media (max-width:600px){.msg-form-row{grid-template-columns:1fr}.msg-form-actions .btn-gold{width:100%}}
+#message-form{max-width:1100px} /* id needed to beat the .section > * 1300px rule; matches .contact-form-grid */
+@media (max-width:600px){.msg-form-row{grid-template-columns:1fr;row-gap:0}.msg-form-actions .btn-gold{width:100%}}
