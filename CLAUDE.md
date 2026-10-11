@@ -21,7 +21,7 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 │                       CTA, Instagram live feed (Elfsight), Yelp,
 │                       contact info, contact form (Netlify), footer.
 │                       Contains LocalBusiness/Attorney JSON-LD.
-├── about.html          About page: firm intro, intro video, team photo, team grid, why choose us,
+├── about.html          About page: firm intro, intro video, team photo, team grid (5-up, .team-grid class in styles.css), why choose us,
 │                       philosophy, credential badges, KidSide partnership, CTA, footer.
 ├── faq.html            Full FAQ page: static long-form Q&A (30 questions as <h3> + answer
 │                       under category headings; no accordion) + FAQPage JSON-LD schema
@@ -58,9 +58,9 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
     ├── insights/                Reel cover posters for the .ig-lite facade: reel-<article-slug>.jpg
     │                            (640x1138 JPEG 82, cover frame from the firm's own Instagram reel)
     ├── team.jpg                 Team photo used in og:/twitter: social meta tags
-    ├── team-updated-v2.jpg      Current team photo shown on about.html (compressed JPEG 85%)
+    ├── team-portraits.jpg       Team portrait image shown on about.html (five framed headshots; compressed JPEG 85%)
     └── team/                    Individual headshots (.jpg): hernan-luna, john-borgo,
-                                 diego-montano, raul-uribe, rony-vasquez
+                                 diego-montano, raul-uribe, ricardo-preciado, rony-vasquez
 ```
 
 ## Design System
@@ -83,12 +83,11 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 
 ## Team
 1. Hernan M. Luna, Esq. — Founding Attorney
-2. John J. Borgo, Esq. — Associate Attorney
-3. Diego Montano — Legal Team Member
-4. Raul Uribe — Legal Assistant
-5. Rony Vasquez — Billing & Intake Specialist
-
-Note: John J. Borgo is not currently shown on about.html (his headshot exists at assets/team/john-borgo.jpg). Confirm with firm leadership whether to add him or remove him from this roster.
+2. John J. Borgo, Esq. — Associate Attorney (not shown on about.html; headshot exists; confirm with leadership whether to add or remove)
+3. Diego Montano — Director of Legal Operations
+4. Raul Uribe — Senior Litigation Paralegal
+5. Ricardo Preciado — Legal Assistant
+6. Rony Vasquez — Billing & Intake Specialist
 
 ## External Integrations (IDs/URLs — do not change without approval)
 | Service | Detail |

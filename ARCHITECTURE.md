@@ -47,7 +47,7 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ### 2026-09 — Image compression standards
 **Decision:** Photos are JPEG at quality 82–85; PNG only where transparency is required (logos, cutouts, badges); no spaces in filenames.
-**Reason:** Keep page weight low on a Netlify static site without a build pipeline to do it automatically. (The oversized hero and team PNGs were converted to JPEG 85% on 2026-09-11.)
+**Reason:** Keep page weight low on a Netlify static site without a build pipeline to do it automatically. (The oversized hero and team PNGs were converted to JPEG 85% on 2026-09-11.) (2026-10: team portrait image replaced by team-portraits.jpg, JPEG 85%.)
 
 ### 2026-08 — Spam-URL 404 strategy for the old hacked WordPress site
 **Decision:** `_redirects` 301s only a whitelist of legitimate old WordPress URLs to current pages; everything else intentionally 404s via custom 404.html. No catch-all redirect.
