@@ -61,6 +61,8 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 
 **Typography:** Display headings `Libre Baskerville` (serif); body/UI `Outfit` (sans); quotes/taglines only `Cormorant Garamond` (italic). Breakpoints: 860px and 600px.
 
+**Side gutters:** `.section` has no side padding above 860px; content gets its gutter from `.section-wrap` (max 1300px, padding clamp(28px,7vw,90px)). Two homepage sections do not use `.section-wrap` — `#criminal-defense` (inline-styled inner div) and `#contact-form` — so each has a dedicated gutter rule at the end of styles.css. Any new section must use `.section-wrap` or it will run to the screen edge on laptops.
+
 ## Firm Details
 - **Firm:** Luna Law, PLLC · **Phone:** 1-800-868-5862 · **Email:** info@hlunalaw.com
 - **Address:** 8950 SW 74th Ct, Suite 2201 PMB A56, Miami, FL 33156
