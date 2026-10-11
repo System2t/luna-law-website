@@ -1,8 +1,8 @@
 # Legitimate old WordPress URLs → new pages (301 permanent)
 # No catch-all — unlisted spam URLs will 404 and deindex naturally
 
-/blog                /faq.html            301
-/blog/               /faq.html            301
+/blog                /insights/           301
+/blog/               /insights/           301
 /criminal-defense    /                    301
 /criminal-defense/   /                    301
 /is-dwi-worse-than-dui     /faq.html      301

@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-10-11 — "Insights" article section paired with Instagram reels (static pages, click-to-load embeds)
+**Decision:** Add an Insights hub at /insights/ with one static HTML page per article, each pairing written copy with its source Instagram reel. Reels load through a click-to-load facade (brand panel + play button, iframe injected on click). Named "Insights" rather than "Blog"; the old /blog redirect now targets the hub. Articles carry BlogPosting + BreadcrumbList schema, a short-answer box, key takeaways, and an author box; the hub carries Blog schema.
+**Reason:** Leadership supplied three write-ups built from top-performing reels. Static pages keep the zero-attack-surface posture (no CMS) and the shared css/js model. Click-to-load keeps Instagram's embed script off initial load, matching the YouTube facade and protecting the 2026-09-11 PageSpeed gains. The short-answer/takeaways structure targets answer engines and LLM retrieval as well as classic search. Subfolder pages use root-relative paths so one nav/footer works at any depth. Reel cover images and VideoObject schema for reels are deferred until the firm supplies cover art.
+
 ### 2026-10-11 — YouTube channel integration via click-to-play facade (no hero slider)
 **Decision:** Intro video (h54zNLlksV0) shown in a dedicated homepage "Meet Luna Law" section after the attorney bio and as the first visual on the About page; YouTube CTAs in the footer (all pages) and the social section; channel added to structured data. Embeds use a poster + play-button facade that injects the youtube-nocookie iframe only on click. A homepage hero slider was rejected.
 **Reason:** A raw YouTube embed loads ~500KB of script per visit and would undo the 2026-09-11 PageSpeed work; the facade costs one lazy image. The hero is the site's brand moment and LCP element, and carousels dilute the Book Consultation CTA. The Thursday live stream remains on the Uno Next Latino channel, so the ticker was intentionally left unchanged.

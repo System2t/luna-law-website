@@ -171,3 +171,19 @@ document.querySelectorAll('.yt-lite').forEach(box => {
   box.addEventListener('click', play);
   box.querySelector('.yt-lite-play').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
 });
+
+// Click-to-load Instagram reel facade (Insights pages) — iframe injected only on click to protect page speed
+document.querySelectorAll('.ig-lite').forEach(box => {
+  const load = () => {
+    if (box.querySelector('iframe')) return;
+    const f = document.createElement('iframe');
+    f.src = 'https://www.instagram.com/reel/' + box.dataset.reelId + '/embed/';
+    f.title = box.dataset.reelTitle || 'Instagram reel from Luna Law';
+    f.allow = 'encrypted-media; picture-in-picture; web-share';
+    f.allowFullscreen = true;
+    box.classList.add('is-loaded');
+    box.appendChild(f);
+    if (typeof gtag === 'function') gtag('event', 'instagram_click', {'event_category': 'engagement', 'event_label': 'Reel Play: ' + (box.dataset.reelTitle || box.dataset.reelId)});
+  };
+  box.addEventListener('click', load);
+});
