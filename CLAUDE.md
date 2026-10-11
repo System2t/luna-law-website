@@ -59,8 +59,8 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
     │                            (640x1138 JPEG 82, cover frame from the firm's own Instagram reel)
     ├── team.jpg                 Team photo used in og:/twitter: social meta tags
     ├── team-portraits.jpg       Team portrait image shown on about.html (five framed headshots; compressed JPEG 85%)
-    └── team/                    Individual headshots (.jpg): hernan-luna, john-borgo,
-                                 diego-montano, raul-uribe, ricardo-preciado, rony-vasquez
+    └── team/                    Individual headshots (.jpg): hernan-luna, diego-montano,
+                                 raul-uribe, ricardo-preciado, rony-vasquez
 ```
 
 ## Design System
@@ -83,11 +83,10 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 
 ## Team
 1. Hernan M. Luna, Esq. — Founding Attorney
-2. John J. Borgo, Esq. — Associate Attorney (not shown on about.html; headshot exists; confirm with leadership whether to add or remove)
-3. Diego Montano — Director of Legal Operations
-4. Raul Uribe — Senior Litigation Paralegal
-5. Ricardo Preciado — Legal Assistant
-6. Rony Vasquez — Billing & Intake Specialist
+2. Diego Montano — Director of Legal Operations
+3. Raul Uribe — Senior Litigation Paralegal
+4. Ricardo Preciado — Legal Assistant
+5. Rony Vasquez — Billing & Intake Specialist
 
 ## External Integrations (IDs/URLs — do not change without approval)
 | Service | Detail |
