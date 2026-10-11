@@ -55,6 +55,8 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
     ├── badge-criminal.png       Florida Bar Criminal Law Section badge
     ├── kidside-logo-02.svg      KidSide logo (about.html partnership section)
     ├── intro-video-poster.jpg   Intro video poster (1280x720 YouTube thumbnail) for the .yt-lite facade (index + about)
+    ├── insights/                Reel cover posters for the .ig-lite facade: reel-<article-slug>.jpg
+    │                            (640x1138 JPEG 82, cover frame from the firm's own Instagram reel)
     ├── team.jpg                 Team photo used in og:/twitter: social meta tags
     ├── team-updated-v2.jpg      Current team photo shown on about.html (compressed JPEG 85%)
     └── team/                    Individual headshots (.jpg): hernan-luna, john-borgo,
@@ -102,7 +104,7 @@ Note: John J. Borgo is not currently shown on about.html (his headshot exists at
 | KidSide | Community partner section on about.html; links to https://kidsidemiami.org/ |
 | Elfsight | Instagram Feed widget on index.html, app ID d1e60766-d52d-42a1-954a-1126a149d175 (firm-owned account; trial until leadership adds payment — trial shows an Elfsight badge). Script is injected on scroll by scripts.js, NOT placed in HTML. |
 | Netlify Forms | Homepage form name="contact" (fields: name, phone, email, message, sms-consent; honeypot bot-field; action /thank-you.html). Detection must be enabled in Netlify → Site configuration → Forms; notification emails configured there (owner-side). Free tier: 100 submissions/month. |
-| Instagram reels | Insights articles embed the paired reel via the .ig-lite click-to-load facade (data-reel-id); the instagram.com/reel/<id>/embed/ iframe is injected on click only. Always keep the visible "Open this reel on Instagram" link. |
+| Instagram reels | Insights articles embed the paired reel via the .ig-lite click-to-load facade (data-reel-id); the instagram.com/reel/<id>/embed/ iframe is injected on click only. Before the click the facade shows a self-hosted cover image (.ig-lite-poster, assets/insights/) — never hotlink Instagram CDN image URLs (they are signed and expire). Always keep the visible "Open this reel on Instagram" link. |
 | YouTube | Channel https://www.youtube.com/@LunaLawMiami; intro video ID h54zNLlksV0 embedded via click-to-play facade (.yt-lite) on index + about; youtube-nocookie.com iframe injected on click only. The Thursday live stream ticker stays on Uno Next Latino — different channel, do not conflate. |
 
 **GA event rule:** every Calendly, LawPay, and tel: link on every page carries its inline `onclick` gtag handler. When editing, moving, or adding any such link, the matching handler MUST be preserved/added.
@@ -126,7 +128,7 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 
 **Swap an image:** compress first (JPEG quality 82–85 for photos; PNG only when transparency is required; no spaces in filenames), place in `assets/`, update every referencing page, keep descriptive `alt` text, then delete the old file if truly unused (grep all HTML+CSS first).
 
-**Add an Insights article:** copy an existing insights/*.html → update title, description, canonical, og tags, both JSON-LD blocks (BlogPosting + BreadcrumbList), h1, short answer, body, takeaways, reel data-reel-id/title/link, Keep reading links → add a card to insights/index.html AND an entry to its Blog JSON-LD blogPost array → add the URL to sitemap.xml and llms.txt → cross-link from the other articles' Keep reading lists where relevant. Reel ID = the code in the instagram.com/reel/<ID>/ URL. Copy must be approved by the firm owner before push.
+**Add an Insights article:** copy an existing insights/*.html → update title, description, canonical, og tags, both JSON-LD blocks (BlogPosting + BreadcrumbList), h1, short answer, body, takeaways, reel data-reel-id/title/link, reel cover poster (save the reel's cover as assets/insights/reel-<slug>.jpg at 640x1138, JPEG 82, and update the .ig-lite-poster img src/alt), Keep reading links → add a card to insights/index.html AND an entry to its Blog JSON-LD blogPost array → add the URL to sitemap.xml and llms.txt → cross-link from the other articles' Keep reading lists where relevant. Reel ID = the code in the instagram.com/reel/<ID>/ URL. Copy must be approved by the firm owner before push.
 
 **Add a page:** copy structure of an existing page (about.html is the cleanest template) → link `css/styles.css` + `js/scripts.js` → include the GA gtag head snippet → add to desktop nav (`.nav-links`) AND mobile drawer on ALL existing pages → add to sitemap.xml → consider llms.txt → commit.
 

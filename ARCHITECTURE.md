@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-10-11 — Self-hosted reel cover posters on Insights facades
+**Decision:** Each Insights reel facade shows the reel's own cover frame (saved from Instagram, owner-approved, compressed to assets/insights/reel-<slug>.jpg) behind the play button; the Instagram iframe still loads only on click. Article dates were staggered (Oct 1 / Oct 6 / Oct 11) at the owner's request.
+**Reason:** The owner wanted visitors to see a preview before clicking. Self-hosting avoids Instagram's signed, expiring CDN URLs and keeps Instagram code off initial load. This supersedes the earlier "covers deferred until the firm supplies cover art" note; firm-supplied designed covers can replace these files later at the same paths.
+
 ### 2026-10-11 — "Insights" article section paired with Instagram reels (static pages, click-to-load embeds)
 **Decision:** Add an Insights hub at /insights/ with one static HTML page per article, each pairing written copy with its source Instagram reel. Reels load through a click-to-load facade (brand panel + play button, iframe injected on click). Named "Insights" rather than "Blog"; the old /blog redirect now targets the hub. Articles carry BlogPosting + BreadcrumbList schema, a short-answer box, key takeaways, and an author box; the hub carries Blog schema.
 **Reason:** Leadership supplied three write-ups built from top-performing reels. Static pages keep the zero-attack-surface posture (no CMS) and the shared css/js model. Click-to-load keeps Instagram's embed script off initial load, matching the YouTube facade and protecting the 2026-09-11 PageSpeed gains. The short-answer/takeaways structure targets answer engines and LLM retrieval as well as classic search. Subfolder pages use root-relative paths so one nav/footer works at any depth. Reel cover images and VideoObject schema for reels are deferred until the firm supplies cover art.
