@@ -120,6 +120,8 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 - Make Payment → LawPay (new tab, gold text, GA event)
 - Book Consultation (CTA button) → Calendly (new tab, GA event)
 
+Laptop tier (861–1440px): compact sizing via the NAV: NO-WRAP + COMPACT LAPTOP TIER block at the end of styles.css; links never wrap. Between 861–1100px the 'Schedule a Consultation' text link is hidden because the Book Consultation CTA goes to the same Calendly page (its `<li>` carries `class="nav-schedule"` on all 6 pages for this — keep it). Any new nav item must be tested at 1280 and 1366px.
+
 ## Live Ticker Banner
 A fixed gold "breaking news" ticker sits directly below the nav on all 6 pages (index, about, faq, privacy-terms, thank-you, 404), scrolling right-to-left continuously. It links to https://www.youtube.com/@UnoNextLatino (new tab, GA event `watch_live_click`) and shows a live countdown to the next Thursday 12:00 PM America/New_York (EST/EDT handled automatically). During Thursday 12:00–12:59 PM ET it switches to a red LIVE NOW state. Styles live in the `LIVE TICKER BANNER` block at the end of `css/styles.css`; countdown/live-state logic lives in the `Live ticker countdown` block at the end of `js/scripts.js`. **Editing rule:** any new page must include the ticker markup (right after `</header>`, before `<main>`) — the site-wide `body{padding-top:102px}` (98px at ≤600px) reserves space for the fixed nav (68px) + ticker (34px / 30px mobile) and depends on every page having it.
 
