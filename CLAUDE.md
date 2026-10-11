@@ -17,12 +17,15 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 ├── index.html          Homepage: hero, credentials, services, process, practice-area
 │                       tabs, attorney bio + Super Lawyers badge, Meet Luna Law video
 │                       section, criminal defense,
-│                       testimonials, CTA, Instagram live feed (Elfsight), Yelp,
+│                       testimonials, FAQ accordion (#faq-acc, 6 questions, no schema),
+│                       CTA, Instagram live feed (Elfsight), Yelp,
 │                       contact info, contact form (Netlify), footer.
 │                       Contains LocalBusiness/Attorney JSON-LD.
 ├── about.html          About page: firm intro, intro video, team photo, team grid, why choose us,
 │                       philosophy, credential badges, KidSide partnership, CTA, footer.
-├── faq.html            Full FAQ page: accordion (#faq-acc) + FAQ JSON-LD schema.
+├── faq.html            Full FAQ page: static long-form Q&A (30 questions as <h3> + answer
+│                       under category headings; no accordion) + FAQPage JSON-LD schema
+│                       (the only FAQ schema on the site).
 ├── privacy-terms.html  SMS privacy statement and terms of service.
 ├── thank-you.html      Post-contact thank-you page (not in sitemap).
 ├── 404.html            Custom 404 (Netlify serves automatically; not in sitemap).
@@ -31,7 +34,7 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 ├── sitemap.xml         4 URLs: /, /faq.html, /about.html, /privacy-terms.html.
 ├── llms.txt            Plain-text firm summary for AI/LLM discoverability.
 ├── css/styles.css      ALL shared CSS (nav, footer, sections, colors, typography).
-├── js/scripts.js       ALL shared JS: mobile nav drawer, FAQ accordion (faq.html),
+├── js/scripts.js       ALL shared JS: mobile nav drawer, FAQ accordion (index.html),
 │                       practice-area tabs (NOTE: the tab panel copy lives in the
 │                       `pdata` array in this file, not in HTML), scroll reveal,
 │                       live ticker countdown (all pages), click-to-play YouTube facade.
@@ -110,7 +113,7 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 ## How to Make Common Changes
 **Edit page text:** edit the HTML in place. If it's a practice-area tab description, edit the `pdata` array in `js/scripts.js` instead. If firm facts changed (phone/hours/address), also update: footer on ALL 6 pages, JSON-LD in index.html, llms.txt, and privacy-terms.html where referenced.
 
-**Edit a FAQ:** edit both the accordion markup in faq.html AND the FAQPage JSON-LD in faq.html so they match. Bump faq.html `lastmod` in sitemap.xml.
+**Edit a FAQ:** FAQ content lives in two places. (1) faq.html holds the full Q&A as static markup AND the FAQPage JSON-LD in its <head> — edit both so every visible question/answer matches its schema entry exactly (currently 30 and 30). (2) index.html holds a short 6-question accordion (#faq-acc) with no schema — if an edited question also appears there, update its answer so the two pages don't contradict each other. Bump `lastmod` in sitemap.xml for whichever page(s) changed.
 
 **Swap an image:** compress first (JPEG quality 82–85 for photos; PNG only when transparency is required; no spaces in filenames), place in `assets/`, update every referencing page, keep descriptive `alt` text, then delete the old file if truly unused (grep all HTML+CSS first).
 
@@ -162,7 +165,7 @@ Then say: "Reply 'push' to deploy." When the owner approves, run `git push origi
 ## Future CMS Direction
 Leadership eventually wants a lite CMS: non-technical firm leadership logging in to edit designated content and file change tickets to the site manager. Approach is **under evaluation** (see ARCHITECTURE.md open decisions). Until then, keep this content/structure split clean so the editable content stays extractable:
 
-**Leadership-editable-someday (content):** FAQ questions/answers (faq.html markup + its JSON-LD), team member names/titles/bios (about.html), business hours and phone (footer on all pages + JSON-LD + llms.txt), testimonials (index.html), announcement-style copy, practice-area tab text (`pdata` in scripts.js — a candidate to move back into data if a CMS lands).
+**Leadership-editable-someday (content):** FAQ questions/answers (faq.html markup + its FAQPage JSON-LD, and the index.html #faq-acc accordion), team member names/titles/bios (about.html), business hours and phone (footer on all pages + JSON-LD + llms.txt), testimonials (index.html), announcement-style copy, practice-area tab text (`pdata` in scripts.js — a candidate to move back into data if a CMS lands).
 
 **Structural (AI/site-manager only):** page layout and sections, nav, styles.css, scripts.js behaviors, GA snippets and event handlers, _redirects, robots/sitemap/llms.txt plumbing, JSON-LD structure, integration embeds (Super Lawyers, Calendly/LawPay URLs), DNS.
 
