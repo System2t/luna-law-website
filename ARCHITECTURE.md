@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-10-11 — Ask Luna article section paired with Instagram reels (renamed from "Insights")
+**Decision:** The article section launched earlier the same day as "Insights" is renamed "Ask Luna": folder and URLs move from insights/ to ask-luna/ (reel covers to assets/ask-luna/), and nav, drawer, footer, breadcrumbs, hub title, eyebrow, Blog schema name, llms.txt, and the /blog redirect all use the new name. The old /insights/ hub and article URLs 301 to their /ask-luna/ equivalents. Everything else in the entries below (static pages, click-to-load reel facade, cover posters, schema) is unchanged.
+**Reason:** Named "Ask Luna" to match the YouTube series and reel branding so site, YouTube, and Instagram share one name. The /insights/ URLs were live for several hours and are in the submitted sitemap history, so explicit 301s (not a catch-all) keep any shared or crawled links working.
+
 ### 2026-10-11 — Self-hosted reel cover posters on Insights facades
 **Decision:** Each Insights reel facade shows the reel's own cover frame (saved from Instagram, owner-approved, compressed to assets/insights/reel-<slug>.jpg) behind the play button; the Instagram iframe still loads only on click. Article dates were staggered (Oct 1 / Oct 6 / Oct 11) at the owner's request.
 **Reason:** The owner wanted visitors to see a preview before clicking. Self-hosting avoids Instagram's signed, expiring CDN URLs and keeps Instagram code off initial load. This supersedes the earlier "covers deferred until the firm supplies cover art" note; firm-supplied designed covers can replace these files later at the same paths.

@@ -1051,7 +1051,7 @@ html{max-width:100vw;overflow-x:hidden}
 .about-video{max-width:880px;margin-left:auto;margin-right:auto}
 .about-video .yt-lite{border-radius:8px}
 
-/* ===== INSIGHTS (HUB + ARTICLES + INSTAGRAM REEL FACADE) ===== */
+/* ===== ASK LUNA (HUB + ARTICLES + INSTAGRAM REEL FACADE) ===== */
 .ins-intro{font-size:.95rem;line-height:1.85;color:var(--text);max-width:680px;margin-top:8px}
 .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rim);margin-top:clamp(40px,5vw,64px)}
 .ins-card{background:var(--surface);padding:clamp(26px,3vw,38px);border-top:2px solid transparent;display:flex;flex-direction:column;transition:background .25s,border-color .25s}
@@ -1094,7 +1094,7 @@ html{max-width:100vw;overflow-x:hidden}
 .ig-lite.is-loaded{aspect-ratio:auto;height:700px;cursor:default;background:var(--void)}
 .ig-lite.is-loaded .ig-lite-badge,.ig-lite.is-loaded .ig-lite-caption,.ig-lite.is-loaded .yt-lite-play{display:none}
 .ig-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
-/* Reel cover poster (self-hosted in assets/insights/): the cover already carries the title, so the badge and text caption are hidden when a poster is present */
+/* Reel cover poster (self-hosted in assets/ask-luna/): the cover already carries the title, so the badge and text caption are hidden when a poster is present */
 .ig-lite-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .ig-lite:hover .ig-lite-poster{transform:scale(1.03)}
 .ig-lite-poster~.ig-lite-caption,.ig-lite-poster~.ig-lite-badge{display:none}

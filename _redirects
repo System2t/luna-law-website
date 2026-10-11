@@ -1,8 +1,18 @@
 # Legitimate old WordPress URLs → new pages (301 permanent)
 # No catch-all — unlisted spam URLs will 404 and deindex naturally
 
-/blog                /insights/           301
-/blog/               /insights/           301
+/blog                /ask-luna/           301
+/blog/               /ask-luna/           301
+# Section renamed Insights -> Ask Luna (2026-10-11): old /insights/ URLs were live briefly
+/insights            /ask-luna/           301
+/insights/           /ask-luna/           301
+/insights/index.html /ask-luna/           301
+/insights/florida-family-court-without-a-lawyer.html  /ask-luna/florida-family-court-without-a-lawyer.html  301
+/insights/florida-family-court-without-a-lawyer  /ask-luna/florida-family-court-without-a-lawyer.html  301
+/insights/50-50-custody-florida-mothers.html  /ask-luna/50-50-custody-florida-mothers.html  301
+/insights/50-50-custody-florida-mothers  /ask-luna/50-50-custody-florida-mothers.html  301
+/insights/does-cheating-affect-child-custody-florida.html  /ask-luna/does-cheating-affect-child-custody-florida.html  301
+/insights/does-cheating-affect-child-custody-florida  /ask-luna/does-cheating-affect-child-custody-florida.html  301
 /criminal-defense    /                    301
 /criminal-defense/   /                    301
 /is-dwi-worse-than-dui     /faq.html      301

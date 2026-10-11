@@ -40,10 +40,10 @@
 - [Homepage](https://hlunalaw.com/): Services overview, attorney bio, testimonials, credentials, contact information
 - [About Luna Law](https://hlunalaw.com/about.html): Firm history, team members, philosophy, community partnerships
 - [FAQ](https://hlunalaw.com/faq.html): Detailed answers to common Florida divorce, custody, alimony, property division, and criminal defense questions
-- [Insights](https://hlunalaw.com/insights/): Ask Luna articles on Florida family law, each paired with an Instagram reel
-  - [Florida family court without a lawyer](https://hlunalaw.com/insights/florida-family-court-without-a-lawyer.html): where self-represented litigants lose ground
-  - [50/50 custody in Florida for mothers](https://hlunalaw.com/insights/50-50-custody-florida-mothers.html): best-interests standard, the 2023 equal time-sharing presumption, what to document
-  - [Does cheating affect child custody in Florida](https://hlunalaw.com/insights/does-cheating-affect-child-custody-florida.html): an affair alone is not a factor; its effect on the children can be
+- [Ask Luna](https://hlunalaw.com/ask-luna/): articles on Florida family law, each paired with an Instagram reel
+  - [Florida family court without a lawyer](https://hlunalaw.com/ask-luna/florida-family-court-without-a-lawyer.html): where self-represented litigants lose ground
+  - [50/50 custody in Florida for mothers](https://hlunalaw.com/ask-luna/50-50-custody-florida-mothers.html): best-interests standard, the 2023 equal time-sharing presumption, what to document
+  - [Does cheating affect child custody in Florida](https://hlunalaw.com/ask-luna/does-cheating-affect-child-custody-florida.html): an affair alone is not a factor; its effect on the children can be
 - [Privacy Policy & Terms](https://hlunalaw.com/privacy-terms.html): SMS privacy statement and terms of service
 
 ## Consultations

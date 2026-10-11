@@ -172,7 +172,7 @@ document.querySelectorAll('.yt-lite').forEach(box => {
   box.querySelector('.yt-lite-play').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
 });
 
-// Click-to-load Instagram reel facade (Insights pages) — iframe injected only on click to protect page speed
+// Click-to-load Instagram reel facade (Ask Luna pages) — iframe injected only on click to protect page speed
 document.querySelectorAll('.ig-lite').forEach(box => {
   const load = () => {
     if (box.querySelector('iframe')) return;
