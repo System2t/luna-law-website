@@ -108,7 +108,7 @@ The previous WordPress site on this domain was **hacked** and generated thousand
 - `sitemap.xml`: contains only the 4 indexable pages. Adding a page = add a `<url>` entry with `lastmod`. Update `lastmod` on substantive content changes. thank-you.html and 404.html stay out.
 - `robots.txt`: allows all crawlers including AI bots (deliberate). Leave permissive.
 - `llms.txt`: keep firm facts (phone, hours, practice areas, pages) in sync with site content.
-- JSON-LD: index.html has LocalBusiness/Attorney schema; faq.html has FAQPage schema — update the FAQ schema whenever FAQ content changes.
+- JSON-LD: index.html has LocalBusiness/Attorney schema; faq.html has FAQPage schema — update the FAQ schema whenever FAQ content changes. index.html and about.html carry VideoObject schema for the intro video (h54zNLlksV0, uploaded 2026-09-19, PT39S). If the featured video is ever swapped, update name/description/uploadDate/duration/thumbnailUrl in BOTH pages — never guess uploadDate; read it from the YouTube watch page ('uploadDate' in page source).
 
 ## How to Make Common Changes
 **Edit page text:** edit the HTML in place. If it's a practice-area tab description, edit the `pdata` array in `js/scripts.js` instead. If firm facts changed (phone/hours/address), also update: footer on ALL 6 pages, JSON-LD in index.html, llms.txt, and privacy-terms.html where referenced.
