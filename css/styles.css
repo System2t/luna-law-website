@@ -1021,3 +1021,22 @@ html{max-width:100vw;overflow-x:hidden}
 @media (min-width:861px) and (max-width:1100px){
   .nav-links .nav-schedule{display:none} /* Book Consultation CTA goes to the same Calendly page */
 }
+
+/* ===== VIDEO + SOCIAL ===== */
+.yt-lite{position:relative;width:100%;aspect-ratio:16/9;background:var(--void);border:1px solid var(--rim);border-top:2px solid var(--gold);overflow:hidden;cursor:pointer}
+.yt-lite img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,opacity .3s}
+.yt-lite:hover img{transform:scale(1.03)}
+.yt-lite-play{position:absolute;inset:0;margin:auto;width:76px;height:76px;border-radius:50%;border:1px solid var(--gold);background:rgba(7,8,12,.72);color:var(--gold-lt);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .22s,transform .22s;backdrop-filter:blur(6px)}
+.yt-lite-play svg{width:30px;height:30px;fill:currentColor;margin-left:4px}
+.yt-lite:hover .yt-lite-play{background:var(--gold);color:var(--void);transform:scale(1.06)}
+.yt-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-section{background:var(--deep);border-top:1px solid var(--rim)}
+.video-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.video-body{font-size:.9rem;line-height:1.85;color:var(--muted);margin-bottom:16px;max-width:460px}
+.video-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:12px}
+.video-link{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px}
+.about-video{margin-bottom:clamp(40px,5vw,64px)}
+.footer-social{display:flex;gap:14px;margin-top:18px}
+.footer-social a{width:38px;height:38px;border:1px solid var(--rim);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);transition:color .2s,border-color .2s}
+.footer-social a:hover{color:var(--gold-lt);border-color:var(--gold)}
+@media (max-width:860px){.video-grid{grid-template-columns:1fr}.yt-lite-play{width:60px;height:60px}.yt-lite-play svg{width:24px;height:24px}}

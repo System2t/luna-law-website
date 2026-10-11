@@ -154,3 +154,20 @@ if (instaFeed) {
     loadElfsight();
   }
 }
+
+// Click-to-play YouTube facade — iframe injected only on click to protect page speed
+document.querySelectorAll('.yt-lite').forEach(box => {
+  const play = () => {
+    if (box.querySelector('iframe')) return;
+    const id = box.dataset.videoId;
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+    f.title = box.dataset.videoTitle || 'Luna Law video';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.allowFullscreen = true;
+    box.appendChild(f);
+    if (typeof gtag === 'function') gtag('event', 'youtube_click', {'event_category': 'engagement', 'event_label': 'Intro Video Play'});
+  };
+  box.addEventListener('click', play);
+  box.querySelector('.yt-lite-play').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
+});

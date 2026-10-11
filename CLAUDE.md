@@ -15,11 +15,12 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 ## File Inventory
 ```
 ├── index.html          Homepage: hero, credentials, services, process, practice-area
-│                       tabs, attorney bio + Super Lawyers badge, criminal defense,
+│                       tabs, attorney bio + Super Lawyers badge, Meet Luna Law video
+│                       section, criminal defense,
 │                       testimonials, CTA, Instagram live feed (Elfsight), Yelp,
 │                       contact info, contact form (Netlify), footer.
 │                       Contains LocalBusiness/Attorney JSON-LD.
-├── about.html          About page: firm intro, team photo, team grid, why choose us,
+├── about.html          About page: firm intro, intro video, team photo, team grid, why choose us,
 │                       philosophy, credential badges, KidSide partnership, CTA, footer.
 ├── faq.html            Full FAQ page: accordion (#faq-acc) + FAQ JSON-LD schema.
 ├── privacy-terms.html  SMS privacy statement and terms of service.
@@ -33,7 +34,7 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 ├── js/scripts.js       ALL shared JS: mobile nav drawer, FAQ accordion (faq.html),
 │                       practice-area tabs (NOTE: the tab panel copy lives in the
 │                       `pdata` array in this file, not in HTML), scroll reveal,
-│                       live ticker countdown (all pages).
+│                       live ticker countdown (all pages), click-to-play YouTube facade.
 └── assets/
     ├── logo.png                 White "LunaLaw, pllc." logo (nav + footer, all pages)
     ├── hernan-hero.jpg          Hernan hero cutout, index hero desktop (compressed JPEG 85%)
@@ -44,6 +45,7 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
     ├── badge-family.png         Florida Bar Family Law Section badge
     ├── badge-criminal.png       Florida Bar Criminal Law Section badge
     ├── kidside-logo-02.svg      KidSide logo (about.html partnership section)
+    ├── intro-video-poster.jpg   Intro video poster (1280x720 YouTube thumbnail) for the .yt-lite facade (index + about)
     ├── team.jpg                 Team photo used in og:/twitter: social meta tags
     ├── team-updated-v2.jpg      Current team photo shown on about.html (compressed JPEG 85%)
     └── team/                    Individual headshots (.jpg): hernan-luna, john-borgo,
@@ -63,7 +65,7 @@ DNS is hosted on **AWS Route 53**. The zone also contains **Microsoft 365 email 
 - **Firm:** Luna Law, PLLC · **Phone:** 1-800-868-5862 · **Email:** info@hlunalaw.com
 - **Address:** 8950 SW 74th Ct, Suite 2201 PMB A56, Miami, FL 33156
 - **Hours:** Mon – Sun: 9am – 5pm · **Languages:** English, Spanish
-- **Instagram:** @hlunalaw · **Yelp:** https://www.yelp.com/biz/lunalaw-miami
+- **Instagram:** @hlunalaw · **YouTube:** @LunaLawMiami · **Yelp:** https://www.yelp.com/biz/lunalaw-miami
 
 ## Team
 1. Hernan M. Luna, Esq. — Founding Attorney
@@ -82,12 +84,13 @@ Note: John J. Borgo is not currently shown on about.html (his headshot exists at
 | Calendly | Booking: https://calendly.com/hernanlunalaw — primary booking path; contact form re-added 2026-09 as a third option |
 | LawPay | Payments: https://secure.lawpay.com/pages/luna/operating |
 | Google Analytics 4 | ID `G-KQM1N2SDG9`, gtag snippet in `<head>` of ALL pages |
-| GA custom events | `book_consultation_click` (Calendly links), `make_payment_click` (LawPay links), `phone_call_click` (tel: links), `watch_live_click` (YouTube live banner), `contact_form_submit` (form submit) — inline `onclick="gtag('event', ...)"` handlers |
+| GA custom events | `book_consultation_click` (Calendly links), `make_payment_click` (LawPay links), `phone_call_click` (tel: links), `watch_live_click` (YouTube live banner), `contact_form_submit` (form submit), `youtube_click` (YouTube links + intro video play), `instagram_click` (footer Instagram icon) — inline `onclick="gtag('event', ...)"` handlers |
 | Google Search Console | Property for hlunalaw.com; monitors indexing/404-deindexing of old spam URLs |
 | Super Lawyers | Paid badge embed in index.html (external CSS+JS from superlawyers.com + profile link) — keep intact |
 | KidSide | Community partner section on about.html; links to https://kidsidemiami.org/ |
 | Elfsight | Instagram Feed widget on index.html, app ID d1e60766-d52d-42a1-954a-1126a149d175 (firm-owned account; trial until leadership adds payment — trial shows an Elfsight badge). Script is injected on scroll by scripts.js, NOT placed in HTML. |
 | Netlify Forms | Homepage form name="contact" (fields: name, phone, email, message, sms-consent; honeypot bot-field; action /thank-you.html). Detection must be enabled in Netlify → Site configuration → Forms; notification emails configured there (owner-side). Free tier: 100 submissions/month. |
+| YouTube | Channel https://www.youtube.com/@LunaLawMiami; intro video ID h54zNLlksV0 embedded via click-to-play facade (.yt-lite) on index + about; youtube-nocookie.com iframe injected on click only. The Thursday live stream ticker stays on Uno Next Latino — different channel, do not conflate. |
 
 **GA event rule:** every Calendly, LawPay, and tel: link on every page carries its inline `onclick` gtag handler. When editing, moving, or adding any such link, the matching handler MUST be preserved/added.
 
@@ -143,6 +146,7 @@ Netlify handles submissions with no backend. Keep `data-netlify="true"`, `netlif
 - Every change plan ends with updating this file (and ARCHITECTURE.md for decisions).
 - All images below the fold get loading="lazy" decoding="async" and explicit width/height attributes; the index hero image keeps fetchpriority="high" and its preload links. Google Fonts loads via the non-blocking media="print" onload pattern — preserve it when editing <head>.
 - Third-party widget scripts (Elfsight) load on scroll via scripts.js — never add their <script> tags directly to the HTML.
+- Video embeds use the .yt-lite click-to-play facade (data-video-id) — never place a raw YouTube <iframe> in HTML.
 
 ## End-of-Task Report (required)
 Every executor task ends with a local commit (no push), then this report, then WAITING for the owner's go-ahead:

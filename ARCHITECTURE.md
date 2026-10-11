@@ -9,6 +9,10 @@ Leadership wants a lite CMS: firm leadership logging in to edit designated conte
 
 ## Decisions
 
+### 2026-10-11 — YouTube channel integration via click-to-play facade (no hero slider)
+**Decision:** Intro video (h54zNLlksV0) shown in a dedicated homepage "Meet Luna Law" section after the attorney bio and as the first visual on the About page; YouTube CTAs in the footer (all pages) and the social section; channel added to structured data. Embeds use a poster + play-button facade that injects the youtube-nocookie iframe only on click. A homepage hero slider was rejected.
+**Reason:** A raw YouTube embed loads ~500KB of script per visit and would undo the 2026-09-11 PageSpeed work; the facade costs one lazy image. The hero is the site's brand moment and LCP element, and carousels dilute the Book Consultation CTA. The Thursday live stream remains on the Uno Next Latino channel, so the ticker was intentionally left unchanged.
+
 ### 2026-09-23 — Contact form re-added via Netlify Forms
 **Decision:** Re-add a homepage contact form (Netlify Forms, honeypot, thank-you redirect, SMS consent checkbox, GA event contact_form_submit) as a third option alongside phone and Calendly.
 **Reason:** Firm owner explicitly requested a no-call option (confirmed as an owner decision, not an AI suggestion). Netlify Forms is free, hosted by the existing host, needs no backend or third-party service, and keeps the zero-attack-surface posture. Phone and Calendly remain the primary conversion paths.
