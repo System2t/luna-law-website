@@ -723,9 +723,9 @@ a{color:inherit;text-decoration:none}
 @media(max-width:860px){
   .intro-header-grid{grid-template-columns:1fr !important}
 }
-@media(max-width:700px){
-  .intro-header-grid + div + div[style*="repeat(3,1fr)"]{grid-template-columns:1fr !important}
-}
+/* About intro pillars (Family Law Focus / Criminal Defense / Bilingual) */
+.intro-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rim);margin-bottom:clamp(40px,5vw,64px)}
+@media(max-width:860px){.intro-pillars{grid-template-columns:1fr}}
 
 /* ── TEAM CARDS ── */
 .team-card{
